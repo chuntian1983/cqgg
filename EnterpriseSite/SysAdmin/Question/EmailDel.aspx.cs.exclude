@@ -1,0 +1,26 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using Modules.Question;
+
+public partial class SysAdmin_Question_EmailDel : System.Web.UI.Page
+{
+
+    QuestionDAL dal = new QuestionDAL();
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (Request.QueryString["EmailId"] != null && Request.QueryString["EmailId"].ToString() != "")
+        {
+            int EmailId = Int32.Parse(Request.QueryString["EmailId"].ToString());
+            dal.Delete(EmailId);
+            Response.Redirect("EmailList.aspx");
+        }
+    }
+}

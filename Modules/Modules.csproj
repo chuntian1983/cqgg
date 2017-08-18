@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C24C4634-CA24-4E78-BE18-D560C19581F2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Modules</RootNamespace>
+    <AssemblyName>Modules</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="myjmail, Version=4.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\EnterpriseSite\Bin\myjmail.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.4.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DBUtility\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\AccountBLL\CustomIdentity.cs" />
+    <Compile Include="Account\AccountBLL\CustomPrincipal.cs" />
+    <Compile Include="Account\AccountBLL\PermissionBLL.cs" />
+    <Compile Include="Account\AccountBLL\RoleBLL.cs" />
+    <Compile Include="Account\AccountBLL\UserBLL.cs" />
+    <Compile Include="Account\AccountDAL\PermissionDAL.cs" />
+    <Compile Include="Account\AccountDAL\RoleDAL.cs" />
+    <Compile Include="Account\AccountDAL\UserDAL.cs" />
+    <Compile Include="Advertisement\AdvertisementBLL.cs" />
+    <Compile Include="Advertisement\AdvertisementDAL.cs" />
+    <Compile Include="Advertisement\AdvertisementModel.cs" />
+    <Compile Include="AD\ADDAL\ADDAL.cs" />
+    <Compile Include="AD\ADDAL\Collection.cs" />
+    <Compile Include="AD\ADDAL\FileOper.cs" />
+    <Compile Include="Answer\AnswerDAL.cs" />
+    <Compile Include="Answer\AnswerModel.cs" />
+    <Compile Include="Answer\newdal.cs" />
+    <Compile Include="Answer\newmodel.cs" />
+    <Compile Include="Applyforjob\ApplyforjobBLL.cs" />
+    <Compile Include="Applyforjob\ApplyforjobDAL.cs" />
+    <Compile Include="Applyforjob\CollectBLL.cs" />
+    <Compile Include="Applyforjob\CollectDAL.cs" />
+    <Compile Include="Article\ArticleBLL\ArticleBLL.cs" />
+    <Compile Include="Article\ArticleBLL\ArticleCategoryBLL.cs" />
+    <Compile Include="Article\ArticleDAL\ArticleCategoryDAL.cs" />
+    <Compile Include="Article\ArticleDAL\ArticleDAL.cs" />
+    <Compile Include="Article\ArticleNew\ArticleDAL1.cs" />
+    <Compile Include="Article\ArticleNew\ArticleModel1.cs" />
+    <Compile Include="Bmfw\bll.cs" />
+    <Compile Include="Bmfw\dal.cs" />
+    <Compile Include="Bmfw\model.cs" />
+    <Compile Include="City\CityDAL.cs" />
+    <Compile Include="City\CityModal.cs" />
+    <Compile Include="Company\CompanyBLL.cs" />
+    <Compile Include="Company\CompanyDAL.cs" />
+    <Compile Include="Department\DepartmentBLL\DepartmentBLL.cs" />
+    <Compile Include="Department\DepartmentBLL\DepartmentCategoryBLL.cs" />
+    <Compile Include="Department\DepartmentDAL\DepartmentCategoryDAL.cs" />
+    <Compile Include="Department\DepartmentDAL\DepartmentDAL.cs" />
+    <Compile Include="Department\DepartmentNew\DepartDAL.cs" />
+    <Compile Include="Department\DepartmentNew\DepartModel.cs" />
+    <Compile Include="Equipment\EquipmentDAL.cs" />
+    <Compile Include="Equipment\EquipmentModel.cs" />
+    <Compile Include="FileDownLoad\FileDownLoadBLL\FileBLL.cs" />
+    <Compile Include="FileDownLoad\FileDownLoadBLL\FileCategoryBLL.cs" />
+    <Compile Include="FileDownLoad\FileDownLoadDAL\FileCategoryDAL.cs" />
+    <Compile Include="FileDownLoad\FileDownLoadDAL\FileDAL.cs" />
+    <Compile Include="FileDownLoad\FileDownLoadNew\FileDAL1.cs" />
+    <Compile Include="FileDownLoad\FileDownLoadNew\FileModel1.cs" />
+    <Compile Include="Job\FindJob\PersonDAL.cs" />
+    <Compile Include="Job\FindJob\PersonModel.cs" />
+    <Compile Include="Job\JobBLL\DepartmentBLL.cs" />
+    <Compile Include="Job\JobBLL\SeekerBLL.cs" />
+    <Compile Include="Job\JobBLL\PostBLL.cs" />
+    <Compile Include="Job\JobDAL\DepartmentDAL.cs" />
+    <Compile Include="Job\JobDAL\SeekerDAL.cs" />
+    <Compile Include="Job\JobDAL\PostDAL.cs" />
+    <Compile Include="Link\LinkBLL\LinkBLL.cs" />
+    <Compile Include="Link\LinkDAL\LinkDAL.cs" />
+    <Compile Include="Link\LinkNew\LinkDAL1.cs" />
+    <Compile Include="Link\LinkNew\LinkModel1.cs" />
+    <Compile Include="LoginRecorder\LoginRecorderBLL.cs" />
+    <Compile Include="LoginRecorder\LoginRecorderDAL.cs" />
+    <Compile Include="Log\LogBLL\LogBLL.cs" />
+    <Compile Include="Log\LogDAL\LogDAL.cs" />
+    <Compile Include="Member\MemberBLL.cs" />
+    <Compile Include="Member\MemberDAL.cs" />
+    <Compile Include="Member\MemberModel.cs" />
+    <Compile Include="Menu\MenuBLL\MenuBLL.cs" />
+    <Compile Include="Menu\MenuDAL\MenuDAL.cs" />
+    <Compile Include="ModulesUtil\ModulesUtil.cs" />
+    <Compile Include="News\NewsBLL\NewsBLL.cs" />
+    <Compile Include="News\NewsBLL\NewsCategoryBLL.cs" />
+    <Compile Include="News\NewsDAL\NewsCategoryDAL.cs" />
+    <Compile Include="News\NewsDAL\NewsDAL.cs" />
+    <Compile Include="News\NewsNew\NewsDAL1.cs" />
+    <Compile Include="News\NewsNew\NewsModel1.cs" />
+    <Compile Include="Page\Page.cs" />
+    <Compile Include="Personal\PersonalBLL.cs" />
+    <Compile Include="Personal\PersonalDAL.cs" />
+    <Compile Include="Picture\PictureBLL.cs" />
+    <Compile Include="Picture\PictureCategoryBLL.cs" />
+    <Compile Include="Picture\PictureCategoryDAL.cs" />
+    <Compile Include="Picture\PictureDAL.cs" />
+    <Compile Include="Poll\PollBLL\PollBLL.cs" />
+    <Compile Include="Poll\PollBLL\PollOptionBLL.cs" />
+    <Compile Include="Poll\PollDAL\PollDAL.cs" />
+    <Compile Include="Poll\PollDAL\PollOptionDAL.cs" />
+    <Compile Include="Product\ProductBLL\ProductBLL.cs" />
+    <Compile Include="Product\ProductBLL\ProductCategoryBLL.cs" />
+    <Compile Include="Product\ProductDAL\ProductCategoryDAL.cs" />
+    <Compile Include="Product\ProductDAL\ProductDAL.cs" />
+    <Compile Include="Product\ProductNew\ProductDAL1.cs" />
+    <Compile Include="Product\ProductNew\ProductModel1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Question\QuestionDAL.cs" />
+    <Compile Include="Question\QusetionModel.cs" />
+    <Compile Include="Recorder\RecorderBLL.cs" />
+    <Compile Include="Recorder\RecorderDAL.cs" />
+    <Compile Include="Recorder\RecorderModel.cs" />
+    <Compile Include="Refer\ReferDAL.cs" />
+    <Compile Include="Refer\ReferModel.cs" />
+    <Compile Include="Resume\ResumeBLL.cs" />
+    <Compile Include="Resume\ResumeDAL.cs" />
+    <Compile Include="Search\SearchHelper.cs" />
+    <Compile Include="Vote\VoteOperate.cs" />
+    <Compile Include="Vote\VoteSubDAL.cs" />
+    <Compile Include="Vote\VoteSubModel.cs" />
+    <Compile Include="Weather\WeatherDAL.cs" />
+    <Compile Include="Weather\WeatherModal.cs" />
+    <Compile Include="Workers\ExpertOutDAL.cs" />
+    <Compile Include="Workers\ExpertOutModel.cs" />
+    <Compile Include="Workers\WorkerDAL.cs" />
+    <Compile Include="Workers\WorkerModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonUtility\CommonUtility.csproj">
+      <Project>{EB76038E-67BE-4024-BA4A-8345F105B948}</Project>
+      <Name>CommonUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBUtility\DBUtility.csproj">
+      <Project>{0988C62E-247F-471F-A183-DB509C7A3839}</Project>
+      <Name>DBUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

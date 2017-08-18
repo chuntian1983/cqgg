@@ -1,0 +1,142 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="RegisteView.aspx.cs" Inherits="SysAdmin_Question_RegisteView" %>
+<%@ Register Assembly="FredCK.FCKeditorV2" Namespace="FredCK.FCKeditorV2" TagPrefix="FCKeditorV2" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>无标题页</title>
+    <link href="../../SysAdmin/Css/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    <table cellspacing="0" cellpadding="0" width="80%" align="center" border="0">
+                <tr>
+                    <td align="center" colspan="2" height="8">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" width="5%">
+                        &nbsp;<img height="23" src="../Images/dig.gif" width="23"></td>
+                    <td align="left">
+                        <font color="#0a7ec5"><b>网上挂号详细信息</b></font></td>
+                </tr>
+            </table>
+            <table cellspacing="1" cellpadding="0" width="80%" align="center" bgcolor="#d1e3fe"
+                border="0">
+                <tr bgcolor="#f6f9ff">
+                    <td align="right" style="width: 147px; height: 22px">
+                        <span style="color: #ff6531">挂号单编号：</span></td>
+                    <td style="height: 22px" width="80%">
+                        <asp:Label ID="lbID" runat="server"></asp:Label></td>
+                </tr>
+                <tr bgcolor="#f6f9ff">
+                    <td align="right" style="width: 147px; height: 22px">
+                        <span style="color: #ff6531">是否审核：</span></td>
+                    <td style="height: 22px" width="80%">
+                        <asp:Label ID="lbState" runat="server"></asp:Label></td>
+                </tr>
+                <tr bgcolor="#f6f9ff">
+                    <td align="right" style="width: 147px; height: 22px">
+                        <font color="#ff6531">挂号人姓名：</font></td>
+                    <td width="80%" style="height: 22px">
+                        <asp:Label ID="lblName" runat="server"></asp:Label></td>
+                </tr>
+                <tr bgcolor="#f6f9ff">
+                    <td align="right" style="width: 147px; height: 22px">
+                        <span style="color: #ff6531">性别：</span></td>
+                    <td style="height: 22px" width="80%">
+                        <asp:Label ID="lbSex" runat="server"></asp:Label></td>
+                </tr>
+                <tr bgcolor="#f6f9ff">
+                    <td align="right" style="width: 147px; height: 22px">
+                        <span style="color: #ff6531">身份证号码：</span></td>
+                    <td style="height: 22px">
+                        <asp:Label ID="lbPid" runat="server"></asp:Label></td>
+                </tr>
+                <tr bgcolor="#f6f9ff">
+                    <td align="right" style="width: 147px; height: 22px;">
+                        <font color="#ff6531">联系电话：</font></td>
+                    <td style="height: 22px">
+                        <asp:Label ID="lblTel" runat="server"></asp:Label></td>
+                </tr>
+                <tr bgcolor="#f6f9ff">
+                    <td align="right" height="22" style="width: 147px">
+                        <span style="color: #ff6531">挂号科室：</span></td>
+                    <td>
+                        <asp:Label ID="lbDepart" runat="server"></asp:Label></td>
+                </tr>
+                <tr bgcolor="#f6f9ff">
+                    <td align="right" height="22" style="width: 147px">
+                        <font color="#ff6531">挂号时间：</font></td>
+                    <td>
+                        <asp:Label ID="lbTime" runat="server"></asp:Label></td>
+                </tr>
+                <tr bgcolor="#f6f9ff">
+                    <td align="right" height="22" style="width: 147px">
+                        <font color="#ff6531">预约时间：</font></td>
+                    <td>
+                        <asp:Label ID="lbLookTime" runat="server"></asp:Label></td>
+                </tr>
+                <tr bgcolor="#f6f9ff">
+                    <td align="right" style="width: 147px; height: 22px;">
+                        <span style="color: #ff6531">简要病情：</span></td>
+                    <td style="height: 22px">
+                        <asp:Literal ID="lbcontent" runat="server"></asp:Literal></td>
+                </tr>
+                <asp:panel ID="aa" Visible="true" runat="server">
+                <tr bgcolor="#f6f9ff">
+                    <td colspan="2" height="25" align="left">
+                        <table cellspacing="1" cellpadding="0" width="100%" align="left" bgcolor="#d1e3fe"
+                            border="0">
+                            <tr bgcolor="#f6f9ff">
+                                <td align="right" style="width: 147px; height: 22px">
+                                    <span style="color: #ff6531">回复人：</span></td>
+                                <td style="height: 22px" width="80%">
+                                    <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#f6f9ff">
+                                <td align="right" style="width: 147px; height: 22px">
+                                    <font color="#ff6531">回复内容：</font></td>
+                                <td width="80%" style="height: 22px">
+                                    <fckeditorv2:fckeditor id="fckBody" runat="server" basepath="../../FCKEditor/"
+                                        height="400px"> </fckeditorv2:fckeditor></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                </asp:panel>
+                <asp:Panel ID="bb" Visible="false" runat="server">
+                <tr bgcolor="#f6f9ff">
+                    <td align="right" style="width: 147px; height: 22px">
+                        <span style="color: #ff6531">回复人：</span></td>
+                    <td style="height: 22px">
+                        <asp:Label ID="lbRName" runat="server"></asp:Label></td>
+                </tr>
+                <tr bgcolor="#f6f9ff">
+                    <td align="right" style="width: 147px; height: 22px">
+                        <span style="color: #ff6531">回复时间：</span></td>
+                    <td style="height: 22px">
+                        <asp:Label ID="lbRtime" runat="server"></asp:Label></td>
+                </tr>
+                <tr bgcolor="#f6f9ff">
+                    <td align="right" style="width: 147px; height: 22px">
+                        <span style="color: #ff6531">回复内容：</span></td>
+                    <td style="height: 22px">
+                        <asp:Literal ID="liContent" runat="server"></asp:Literal></td>
+                </tr>
+                </asp:Panel>
+                <tr bgcolor="#f6f9ff">
+                    <td colspan="2" height="25" align="center">
+                        <asp:Button ID="bthuifu" runat="server" Width="65" CssClass="input" Text="回复" OnClick="bthuifu_Click">
+                        </asp:Button>
+                        <asp:Button ID="Button2" runat="server" CssClass="input" OnClick="Button2_Click"
+                            Text="返 回" Width="65" />
+                    </td>
+                </tr>
+            </table>
+    </div>
+    </form>
+</body>
+</html>

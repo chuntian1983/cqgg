@@ -1,0 +1,114 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using Modules.Question;
+using Modules.Answer;
+
+public partial class SysAdmin_Question_EmailView : System.Web.UI.Page
+{
+    QuestionDAL dal = new QuestionDAL();
+    QusetionModel model = new QusetionModel();
+    AnswerDAL dal1 = new AnswerDAL();
+    AnswerModel model1 = new AnswerModel();
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!Page.IsPostBack)
+        {
+            if (Request.QueryString["EmailId"] != null && Request.QueryString["EmailId"].ToString() != "")
+            {
+                int emailid = Int32.Parse(Request.QueryString["EmailId"].ToString());
+                PageBill(emailid);
+                PageBill1(emailid);
+            }
+        }
+    }
+
+    protected void PageBill(int emailid)
+    {
+        model = dal.GetModel(emailid);
+        this.lblName.Text = model.Name;
+        this.lblTel.Text = model.Tel;
+        this.lbcontent.Text = GetText(model.Info);
+        this.lbEmail.Text = model.Email;
+        this.lblTel.Text = model.Tel.ToString();
+        this.lbTime.Text = model.AddDate.ToShortDateString();
+        this.lbTitle.Text = model.Title.ToString();
+
+    }
+
+    //HTML－＞文本转换
+    public static string GetText(string StringValue)
+    {
+        string str = StringValue;
+        str = str.Replace("&amp;", "&");
+        str = str.Replace("''", "'");
+        str = str.Replace("&quot;", "\"");
+        str = str.Replace("&nbsp;", " ");
+        str = str.Replace("&lt;", "<");
+        str = str.Replace("&gt;", ">");
+        str = str.Replace("<br>", "\n");
+        return str;
+    }
+
+    protected void PageBill1(int emailid)
+    {
+        bool result = dal1.Exists(emailid);
+
+        if (result == true)
+        {
+            this.aa.Visible = false;
+            this.bthuifu.Visible = false;
+            this.bb.Visible = true;
+            model1 = dal1.GetModel(emailid);
+            this.lbRName.Text = model1.Name;
+            this.lbRtime.Text = model1.AddDate.ToShortDateString();
+            this.liContent.Text = model1.Content;
+            this.bthuifu.Visible = false;
+        }
+        else
+        {
+            this.aa.Visible = true;
+            this.bthuifu.Visible = true;
+        }
+    }
+    protected void bthuifu_Click(object sender, EventArgs e)
+    {
+        if (this.txtName.Text == "")
+        {
+            Response.Write("<Script>alert('回复人姓名不能为空！');</Script>");
+            return;
+        }
+        else
+        {
+            model1.Name = this.txtName.Text;
+        }
+        model1.QuestionId = Int32.Parse(Request.QueryString["EmailId"].ToString());
+        model1.Business = "";
+        model1.State = 1;
+        model1.Title = "";
+        model1.AddDate = DateTime.Now;
+        if (this.fckBody.Value == "")
+        {
+            Response.Write("<Script>alert('回复内容不能为空！');</Script>");
+            return;
+        }
+        else
+        {
+            model1.Content = this.fckBody.Value.ToString();
+        }
+        dal1.Add(model1);
+        dal.UpdateState(Request.QueryString["EmailId"].ToString());
+        Response.Write("<Script>alert('你已成功回复！');location.href('EmailList.aspx');</Script>");
+    }
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("EmailList.aspx");
+    }
+}

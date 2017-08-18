@@ -1,0 +1,64 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using Modules.Equipment;
+using CommonUtility;
+
+public partial class SysAdmin_Equipment_EquipmentModify : System.Web.UI.Page
+{
+    EquipmentDAL dal = new EquipmentDAL();
+    EquipmentModel model = new EquipmentModel();
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!Page.IsPostBack)
+        {
+            if (Request.QueryString["EquipmentId"] != null && Request.QueryString["EquipmentId"].ToString() != "")
+            {
+                int eid = Int32.Parse(Request.QueryString["EquipmentId"].ToString());
+                this.Label1.Text = eid.ToString();
+                PageBill(eid);
+            }
+        }
+    }
+
+    protected void PageBill(int id)
+    {
+          model=dal.GetModel(id);
+     
+          this.txtName.Text = model.EquipmentName.ToString();
+          this.txtImageLink.Text = model.EquipmentPic.ToString();
+          this.txtSort.Text = model.Sort.ToString();
+          this.fckRemark.Value = model.Info.ToString();
+     
+    }
+
+
+    protected void btnSubmit_Click(object sender, EventArgs e)
+    {
+        if (this.txtName.Text == "" )
+        {
+            Response.Write("<Script>alert('设备名称不允许为空！');</Script>");
+            return;
+        }
+        else
+        {
+            model.EquipmentId = Int32.Parse(this.Label1.Text.ToString());
+            model.EquipmentName = this.txtName.Text.Trim();
+            model.EquipmentPic = this.txtImageLink.Text.Trim();
+            model.Sort = 0;
+            model.Info = this.fckRemark.Value.ToString();
+            model.FillTime = DateTime.Now;
+            dal.Update(model);
+            Response.Write("<Script>alert('修改成功！');</Script>");
+            JSUtility.CloseWindow();
+        }
+    }
+}

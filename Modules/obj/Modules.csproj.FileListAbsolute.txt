@@ -1,0 +1,16 @@
+E:\拱墅人才网\EnterpriseSite\Modules\bin\Debug\Modules.dll
+E:\拱墅人才网\EnterpriseSite\Modules\bin\Debug\Modules.pdb
+E:\拱墅人才网\EnterpriseSite\Modules\bin\Debug\CommonUtility.dll
+E:\拱墅人才网\EnterpriseSite\Modules\bin\Debug\myjmail.dll
+E:\拱墅人才网\EnterpriseSite\Modules\bin\Debug\CommonUtility.pdb
+E:\拱墅人才网\EnterpriseSite\Modules\obj\Debug\ResolveAssemblyReference.cache
+E:\拱墅人才网\EnterpriseSite\Modules\obj\Debug\Modules.dll
+E:\拱墅人才网\EnterpriseSite\Modules\obj\Debug\Modules.pdb
+E:\工具\工作\gsrc\EnterpriseSite\Modules\bin\Debug\Modules.dll
+E:\工具\工作\gsrc\EnterpriseSite\Modules\bin\Debug\Modules.pdb
+E:\工具\工作\gsrc\EnterpriseSite\Modules\bin\Debug\CommonUtility.dll
+E:\工具\工作\gsrc\EnterpriseSite\Modules\bin\Debug\myjmail.dll
+E:\工具\工作\gsrc\EnterpriseSite\Modules\bin\Debug\CommonUtility.pdb
+E:\工具\工作\gsrc\EnterpriseSite\Modules\obj\Debug\ResolveAssemblyReference.cache
+E:\工具\工作\gsrc\EnterpriseSite\Modules\obj\Debug\Modules.dll
+E:\工具\工作\gsrc\EnterpriseSite\Modules\obj\Debug\Modules.pdb

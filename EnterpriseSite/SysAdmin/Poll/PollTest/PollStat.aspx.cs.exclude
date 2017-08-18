@@ -1,0 +1,55 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using Modules.Poll;
+
+public partial class SysAdmin_Poll_PollTest_PollStat : System.Web.UI.Page
+{
+    private string _pollId = HttpContext.Current.Request["PollId"];
+    private PollBLL _poll = new PollBLL();
+    private PollOptionBLL _pollOption = new PollOptionBLL();
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            if (this._pollId != null)
+            {
+                int pollId = Convert.ToInt32(this._pollId);
+                lblPoll.Text = this._poll.GetPollDetail(pollId).PollText;
+                Bind(pollId);
+            }
+        }
+    }
+    private void Bind(int pollId)
+    {
+        DataSet Optiones = this._pollOption.GetPollOption(pollId);
+        int totalVotes = 0;
+        foreach (DataRow dr in Optiones.Tables[0].Rows)
+        {
+            int votes =(int) dr["Votes"];
+            totalVotes += votes;
+        }
+        Optiones.Tables[0].Columns.Add("VotesPercent", typeof(System.Double));
+        foreach (DataRow dr in Optiones.Tables[0].Rows)
+        {
+            if (totalVotes != 0)
+            {
+                dr["VotesPercent"] = (int)dr["Votes"] % totalVotes;
+            }
+            else
+            {
+                dr["VotesPercent"] = 0;
+            }
+        }
+        this.gvPollOption.DataSource = Optiones;
+        this.gvPollOption.DataBind();
+        Convert.dr["VotesPercent"]
+    }
+}

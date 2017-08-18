@@ -1,0 +1,8 @@
+bin\Debug\Modules.dll
+bin\Debug\Modules.pdb
+bin\Debug\CommonUtility.dll
+bin\Debug\myjmail.dll
+bin\Debug\CommonUtility.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Modules.dll
+obj\Debug\Modules.pdb

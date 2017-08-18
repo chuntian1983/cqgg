@@ -1,0 +1,111 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using Modules.Question;
+using Modules.Answer;
+
+public partial class SysAdmin_Question_RegisteView : System.Web.UI.Page
+{
+    QuestionDAL dal = new QuestionDAL();
+    QusetionModel model = new QusetionModel();
+    AnswerDAL dal1 = new AnswerDAL();
+    AnswerModel model1 = new AnswerModel();
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!Page.IsPostBack)
+        {
+            if (Request.QueryString["RegistId"] != null && Request.QueryString["RegistId"].ToString() != "")
+            {
+                int registid = Int32.Parse(Request.QueryString["RegistId"].ToString());
+                PageBill(registid);
+                PageBill1(registid);
+            }
+        }
+    }
+
+    protected void PageBill(int registid)
+    {
+        model = dal.GetModel(registid);
+        this.lbID.Text = model.RegistID;
+        this.lblName.Text = model.Name;
+        this.lbSex.Text = (model.Sex.ToString() == "0" ? "男" : "女");
+        this.lbPid.Text = model.Pid.ToString();
+        this.lbState.Text = (model.State.ToString() == "1" ? "<font color=green>是</font>" : "<font color=red>否</font>");//审核状态 
+        this.lblTel.Text = model.Tel;
+        this.lbDepart.Text = model.Email;
+        this.lbcontent.Text = GetText(model.Info);
+        this.lbTime.Text = model.AddDate.ToShortDateString();
+        this.lbLookTime.Text = model.LookTime.ToShortDateString();
+
+   }
+
+    protected void PageBill1(int registid)
+    {
+        bool result = dal1.Exists(registid);
+        if (result == true)
+        {
+            this.aa.Visible = false;
+            this.bb.Visible = true;
+            model1 = dal1.GetModel(registid);
+            this.lbRName.Text = model1.Name;
+            this.lbRtime.Text = model1.AddDate.ToShortDateString();
+            this.liContent.Text = model1.Content;
+            this.bthuifu.Visible = false;
+        }
+    }
+
+    protected void bthuifu_Click(object sender, EventArgs e)
+    {
+        if (this.txtName.Text == "")
+        {
+            Response.Write("<Script>alert('回复人姓名不能为空！');</Script>");
+            return;
+        }
+        else
+        {
+            model1.Name = this.txtName.Text;
+        }
+        model1.QuestionId = Int32.Parse(Request.QueryString["RegistId"].ToString());
+        model1.Business = "";
+        model1.State = 1;
+        model1.Title = "";
+        model1.AddDate = DateTime.Now;
+        if (this.fckBody.Value == "")
+        {
+            Response.Write("<Script>alert('回复内容不能为空！');</Script>");
+            return;
+        }
+        else
+        {
+            model1.Content = this.fckBody.Value.ToString();
+        }
+        dal1.Add(model1);
+        Response.Write("<Script>alert('你已成功回复！');</Script>");
+    }
+
+    //HTML－＞文本转换
+    public static string GetText(string StringValue)
+    {
+        string str = StringValue;
+        str = str.Replace("&amp;","&" );
+        str = str.Replace("''", "'");
+        str = str.Replace("&quot;", "\"");
+        str = str.Replace( "&nbsp;"," ");
+        str = str.Replace("&lt;","<");
+        str = str.Replace("&gt;",">" );
+        str = str.Replace( "<br>","\n");
+        return str;
+    }
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("RegistList.aspx");
+    }
+}

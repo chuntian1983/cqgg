@@ -1,0 +1,90 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="EquipmentModify.aspx.cs" Inherits="SysAdmin_Equipment_EquipmentModify" %>
+<%@ Register Assembly="FredCK.FCKeditorV2" Namespace="FredCK.FCKeditorV2" TagPrefix="FCKeditorV2" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>无标题页</title>
+    <LINK href="../Css/css.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="../JS/calendar.js"></script>
+     <script type="text/jscript" src="../js/prototype.js"></script>
+      <script>
+      function openWinDialog(url,arg)
+      {
+        return window.showModalDialog(url,arg, 'edge:raised;scroll:0;status:0;help:0;resizable:1;dialogWidth:800px;dialogHeight:600px;');
+      }
+      
+      function selectPic(showReturnObj)
+      {
+            openWinDialog('../picture/selectpicture.aspx?rdn='+Math.random(),$(showReturnObj));
+      }   
+   
+     </script>
+     <base target="_self"></base>
+</head>
+	<body MS_POSITIONING="GridLayout">
+		<form id="Form1" method="post" runat="server">
+			<table cellSpacing="0" cellPadding="0" width="80%" align="center" border="0">
+				<tr>
+					<td align="center" colSpan="2" height="8"></td>
+				</tr>
+				<tr>
+					<td align="left" width="5%">&nbsp;<IMG height="23" src="../Images/dig.gif" width="23"></td>
+					<td align="left"><font color="#0a7ec5"><b>医疗设备信息修改<asp:Label ID="Label1" runat="server" Visible="False"></asp:Label></b></font></td>
+				</tr>
+			</table>
+			<table cellSpacing="1" cellPadding="0" width="80%" align="center" bgColor="#d1e3fe" border="0">
+              <asp:panel ID="aaa" runat=server Visible=false>
+                <tr bgcolor="#f6f9ff">
+                    <td align="right" height="22">
+                        <span style="color: #ff6531">推荐状态：</span></td>
+                    <td>
+                        <asp:CheckBox ID="CheckBox2" runat="server" Text="最新推荐" /></td>
+                </tr>
+                </asp:panel>
+				<tr bgColor="#f6f9ff">
+					<td align="right" height="22"><font color="#ff6531">名称：</font></td>
+					<td><asp:textbox id="txtName" runat="server" Width="432px"></asp:textbox><FONT color="red">*</FONT></td>
+				</tr>
+			    <asp:panel ID=aa runat=server Visible=false>
+				<tr bgColor="#f6f9ff">
+					<td align="right" height="22"><font color="#ff6531">价格：</font></td>
+					<td><asp:textbox id="txtPrice" runat="server" Width="432px">0</asp:textbox><FONT color="red">*</FONT></td>
+				</tr>
+				</asp:panel>
+				<tr bgColor="#f6f9ff">
+					<td align="right" height="22"><font color="#ff6531">设备图片：</font></td>
+					<td><asp:textbox id="txtImageLink" runat="server" Width="432px" onfocus="this.blur();"></asp:textbox><FONT color="red">*</FONT>
+					  <input id="btnUploadPic" runat="server" type="button" value="上传图片" onclick="openWinDialog('../picture/UploadPicture.aspx');" title='上传图片' />
+					    <input  type="button" value="选择图片" onclick="selectPic('txtImageLink');" title='选择图片' />
+					</td>
+				</tr>
+				  <asp:panel ID=bb runat=server Visible=false>
+				<tr bgColor="#f6f9ff">
+					<td align="right" height="22"><font color="#ff6531">排序号：</font></td>
+					<td><asp:textbox id="txtSort" runat="server" Width="432px">0</asp:textbox><FONT color="red">*</FONT></td>
+				</tr>
+				</asp:panel>
+                <asp:panel ID="bbb" runat=server Visible=false>
+				<tr bgColor="#f6f9ff">
+					<td align="right" height="22"><font color="#ff6531">产品类别：</font></td>
+					<td><asp:DropDownList ID="ddlType" runat="server"></asp:DropDownList></td>
+				</tr>
+				
+				<TR bgColor="#f6f9ff">
+					<TD align="right" height="22"><FONT color="#ff6531">详细参数：</FONT></TD>
+					<TD><fckeditorv2:fckeditor id="fckRemark" runat="server" basepath="../../FCKEditor/"
+                                                    height="400px" >
+                                        </fckeditorv2:fckeditor></TD>
+				</TR></asp:panel>
+				<tr bgColor="#f6f9ff">
+					<td align="left" colSpan="2" height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+						&nbsp;&nbsp;&nbsp;
+						<asp:button id="btnSubmit" runat="server" Width="80px" CssClass="input" Text="确定" OnClick="btnSubmit_Click"></asp:button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input class="input" type="reset" value=" 重 填 " name="reset">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</HTML>

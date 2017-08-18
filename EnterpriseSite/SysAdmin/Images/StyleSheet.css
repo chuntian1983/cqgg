@@ -1,0 +1,144 @@
+BODY {
+	FONT-SIZE: 12px; BACKGROUND: url(../images/bg.gif); MARGIN: 0px; FONT-FAMILY: ËÎÌו,Arial, Helvetica, sans-serif
+}
+.input {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #ffffff
+}
+A:link {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff6600
+}
+A:active {
+	COLOR: #ff6600; TEXT-DECORATION: none
+}
+A.linkwhite:link {
+	COLOR: #ffffff; LINE-HEIGHT: 18px; TEXT-DECORATION: none
+}
+A.linkwhite:visited {
+	COLOR: #ffffff; LINE-HEIGHT: 18px; TEXT-DECORATION: none
+}
+A.linkwhite:hover {
+	COLOR: #ff6600; LINE-HEIGHT: 18px
+}
+A.linkwhite:active {
+	COLOR: #ff6600; LINE-HEIGHT: 18px; TEXT-DECORATION: none
+}
+A.linkgreen:link {
+	COLOR: #009933; TEXT-DECORATION: none
+}
+A.linkgreen:visited {
+	COLOR: #009933; TEXT-DECORATION: none
+}
+A.linkgreen:hover {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+A.linkgreen:active {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+INPUT {
+	FONT-SIZE: 12px
+}
+TD {
+	FONT-SIZE: 12px; COLOR: #444444; LINE-HEIGHT: 175%; TEXT-DECORATION: none
+}
+.zw {
+	BACKGROUND-POSITION: right bottom; BACKGROUND-IMAGE: url(../images/index/zw_bg.gif); BACKGROUND-REPEAT: no-repeat
+}
+.whiteline {
+	BORDER-RIGHT: 1px; BORDER-TOP: 1px; BORDER-LEFT: 1px; BORDER-BOTTOM: 1px
+}
+#table1 TABLE {
+	BORDER-COLLAPSE: collapse
+}
+#table1 TD {
+	BORDER-RIGHT: #cee6f1 1px solid; BORDER-TOP: #cee6f1 1px solid; BORDER-LEFT: #cee6f1 1px solid; BORDER-BOTTOM: #cee6f1 1px solid
+}
+#table2 TABLE {
+	BORDER-COLLAPSE: collapse
+}
+#table2 TD {
+	BORDER-RIGHT: 0px solid; BORDER-TOP: 0px solid; BORDER-LEFT: 0px solid; BORDER-BOTTOM: 0px solid
+}
+#table3 TD {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid
+}
+.fontw {
+	FONT-SIZE: 12px; COLOR: #006699
+}
+.fontwhite {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffffff
+}
+.fontwhite2 {
+	FONT-SIZE: 12px; COLOR: #ffffff
+}
+.fontq {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #ff6600; TEXT-DECORATION: none
+}
+.font14 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #ff3300; TEXT-DECORATION: none
+}
+.BlueTile {
+	FONT-SIZE: 12px; COLOR: #02559d; TEXT-DECORATION: none
+}
+.font12j {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #1373bd
+}
+.select {
+	FONT-SIZE: 12px
+}
+.ButtonList {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; CURSOR: default; BORDER-BOTTOM: #000000 1px solid; BACKGROUND-COLOR: #89d9f4
+}
+.bgg {
+	BACKGROUND-POSITION: left bottom; BACKGROUND-IMAGE: url(../images/page/images_1.gif); BACKGROUND-REPEAT: no-repeat
+}
+.fontred {
+	FONT-SIZE: 12px; COLOR: #e41601
+}
+.table {
+	BACKGROUND-COLOR: #f0fafd
+}
+.table2 {
+	BACKGROUND-COLOR: #ceedf9
+}
+.table3 {
+	BACKGROUND-COLOR: #e8e8e8
+}
+.displaytext {
+	DISPLAY: none
+}
+.but_bg {
+	BACKGROUND: url(../images/linebg.jpg) repeat-x left bottom
+}
+.inputopen {
+	WIDTH: 100%
+}
+.inputboottom {
+	BORDER-RIGHT: outset; BORDER-TOP: outset; BORDER-LEFT: outset; BORDER-BOTTOM: outset
+}
+.inputopencolor {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #fd7400
+}
+.trbq {
+	BACKGROUND-COLOR: #f7fbff
+}
+.tablebq {
+	BACKGROUND-COLOR: #d1e6f9
+}
+.buttonstyle {
+	BORDER-RIGHT: #404040 1px solid; BORDER-TOP: #404040 1px solid; BORDER-LEFT: #404040 1px solid; COLOR: black; BORDER-BOTTOM: #404040 1px solid; BACKGROUND-COLOR: #b2d2ff
+}
+.dropdownpstyle {
+	BORDER-RIGHT: #404040 1px solid; BORDER-TOP: #404040 1px solid; BORDER-LEFT: #404040 1px solid; BORDER-BOTTOM: #404040 1px solid
+}
+.BiaoQianButton {
+	WIDTH: 32px; HEIGHT: 32px; TEXT-ALIGN: center
+}
+.seach_size {
+	WIDTH: 150px
+}

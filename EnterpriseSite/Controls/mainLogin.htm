@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>无标题页</title>
+<link href="../css/css2.css" rel="stylesheet" type="text/css" />
+    <script language="javascript">
+<!--
+function window_onload() {
+	var S = document.getElementById("usernameshow");
+	S.focus();
+}
+
+function gook() {
+	var S;
+
+	S = document.getElementById("usernameshow");
+	if (S.value == "")
+	{
+		alert("用户名不可为空");
+		S.focus();
+		return ;
+	}
+
+	S = document.getElementById("pwshow");
+	if (S.value == "")
+	{
+		alert("密码不可为空");
+		S.focus();
+		return ;
+	}
+	
+	S = document.getElementById("usernameshow");
+	document.f1.username.value = S.value;
+	
+	S = document.getElementById("pwshow");
+	document.f1.password.value = S.value;
+	
+	
+	document.f1.submit();
+
+}
+
+//-->
+    </script>
+
+</head>
+<body >
+    <form name="f1" action="http://mail.zjdldq.com/3/default.asp" method="post" target="_blank">
+        <input type="hidden" name="username" id="Hidden1">
+        <input type="hidden" name="password" id="Hidden2">
+        <input type="hidden" value="7453" name="picnum" id="Hidden3">
+    </form>
+    <table width="194" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td valign="top" background="../images/email.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td height="10"></td>
+            </tr>
+          </table>
+            <table width="96%" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td height="26">　<span class="style4">邮箱登录</span> <img src="../images/email.gif" width="66" height="5" /></td>
+              </tr>
+              <tr>
+                <td height="26">　<span class="style1">用户名：
+                  <input name="usernameshow" type="text" class="style3" size="16" id="usernameshow" />
+                </span></td>
+              </tr>
+              <tr>
+                <td height="26">　<span class="style1">密　码：
+                  <input name="pwshow" type="password" class="style3" size="16" id="pwshow" />
+                </span></td>
+              </tr>
+              <tr>
+                <td height="34" align="center" valign="middle"><a href="http://mail.zjdldq.com/3/default.asp" target="_blank"><span class="style1">欢迎登录邮箱</span> </a><span class="style1">｜</span> <a href="#" class="font32"
+                    onclick="javascript:gook()">马上登录</a></td>
+              </tr>
+          </table></td>
+      </tr>
+    </table>
+</body>
+</html>
