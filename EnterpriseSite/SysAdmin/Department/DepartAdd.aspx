@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="DepartAdd.aspx.cs" Inherits="SysAdmin_Department_DepartAdd" %>
 
-<%@ Register Assembly="FredCK.FCKeditorV2" Namespace="FredCK.FCKeditorV2" TagPrefix="FCKeditorV2" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
@@ -48,8 +48,8 @@
                 <td align="right" height="22">
                     <font color="#ff6531">科室介绍：</font></td>
                 <td>
-                    <FCKeditorV2:FCKeditor ID="fckBody" runat="server" BasePath="../../FCKEditor/" Height="400px">
-                    </FCKeditorV2:FCKeditor>
+                    
+                    <textarea id="fckBody" runat="server"></textarea>
                 </td>
             </tr>
             <tr bgcolor="#f6f9ff">

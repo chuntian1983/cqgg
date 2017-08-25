@@ -74,15 +74,15 @@ public partial class SysAdmin_Question_ReferView : System.Web.UI.Page
         model1.State = 1;
         model1.Title = "";
         model1.AddDate = DateTime.Now;
-        if (this.fckBody.Value == "")
-        {
-            Response.Write("<Script>alert('回复内容不能为空！');</Script>");
-            return;
-        }
-        else
-        {
-            model1.Content = this.fckBody.Value.ToString();
-        }
+        //if (this.fckBody.Value == "")
+        //{
+        //    Response.Write("<Script>alert('回复内容不能为空！');</Script>");
+        //    return;
+        //}
+        //else
+        //{
+        //    model1.Content = this.fckBody.Value.ToString();
+        //}
         dal1.Add(model1);
         int ReferId = Int32.Parse(Request.QueryString["ReferId"].ToString());
         dal.UpdateState(ReferId);

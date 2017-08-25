@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="UploadPicture.aspx.cs" Inherits="SysAdmin_Picture_UploadPicture" %>
-<%@ Register Assembly="FredCK.FCKeditorV2" Namespace="FredCK.FCKeditorV2" TagPrefix="FCKeditorV2" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
@@ -71,9 +71,9 @@
                                                     <td align="right" style="height: 14px">
                                                         详细内容：</td>
                                                     <td align="left"  style="height: 14px">
-                                                        <fckeditorv2:fckeditor id="fckBody" runat="server" basepath="../../FCKEditor/" 
-                                                    height="400px" >
-                                        </fckeditorv2:fckeditor>&nbsp;</td>
+                                                        &nbsp;
+                                        <textarea id="fckBody" runat="server"></textarea>
+                                        </td>
                                                 </tr>
                                                 <tr  align="center">
                                                     <td align="center"  colspan="2">

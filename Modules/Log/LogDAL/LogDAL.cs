@@ -25,8 +25,10 @@ namespace Modules.Log
             paras[1] = helper.GetParameter("@IP", ip);
             paras[2] = helper.GetParameter("@Url", url);
             paras[3] = helper.GetParameter("@Description", description);
-            paras[4] = helper.GetParameter("@LogId",DbType.Int32,4,ParameterDirection.Output);
-            if (helper.ExecuteNonQuery("sp_Log_Add", paras) == 1) return (int)paras[4].Value;
+            paras[4] = helper.GetParameter("@OperationDate", System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            string strsql = "insert into t_log(UserId,ip,url,Description,OperationDate) values(@UserId,@IP,@Url,@Description,@OperationDate)";
+            if (helper.ExecuteNonQuery(helper.connectionString, CommandType.Text, strsql, paras) > 0)
+                return 2;
             return -1;
         }
 
@@ -62,8 +64,15 @@ namespace Modules.Log
             AdoHelper helper = AdoHelper.CreateHelper();
             StringBuilder query = new StringBuilder();
             query.Append("select a.*,b.Nickname from T_Log a inner join T_User b on a.UserId=b.UserId ");
-            query.AppendFormat("where {0} ", where);
-            query.AppendFormat("order by {0}", order);
+            if (!string.IsNullOrEmpty(where))
+            {
+                query.AppendFormat("where {0} ", where);
+            }
+            if (!string.IsNullOrEmpty(order))
+            {
+                query.AppendFormat(" order by {0}", order);
+            }
+           
             return helper.ExecuteDataset(query.ToString());
         }
 

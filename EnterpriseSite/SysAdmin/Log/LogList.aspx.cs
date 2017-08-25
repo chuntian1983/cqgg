@@ -52,7 +52,7 @@ public partial class SysAdmin_Account_Log_LogList : System.Web.UI.Page
     private void BindLog()
     {
         string filter = this.GetFilter();
-        DataTable dts = this._log.Select("","").Tables[0];
+        DataTable dts = this._log.Select(filter,"").Tables[0];
         AspNetPager1.RecordCount = dts.Rows.Count;
         PagedDataSource pds = new PagedDataSource();
         pds.DataSource = dts.DefaultView;

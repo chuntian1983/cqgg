@@ -26,8 +26,6 @@
         //            }, "text");
         //        });
         $(document).ready(function () {
-
-
             $('.easyui-accordion1 a').click(function () {
                 var tabTitle = $(this).children('.nav').text();
                 var url = $(this).attr("rel");
@@ -74,6 +72,12 @@
                     closable: true,
                     cache: false,
                     icon: icon
+                });
+               
+                $('.tabs-inner span').each(function (i, n) {
+                    var t = $(n).text();
+                    if (t != subtitle)
+                        $('#tabs').tabs('close', t);
                 });
             } else {
                 $('#tabs').tabs('select', subtitle);
@@ -133,7 +137,7 @@
                 $.messager.confirm('系统提示', '您确定要退出本次登录吗?', function (r) {
                     if (r) {
 
-                        window.location.href = "loginuser.aspx";
+                        window.location.href = "../loginuser.aspx";
 
                     }
                 });
@@ -142,7 +146,7 @@
                 $.messager.confirm('系统提示', '您确定要退出本次登录吗?', function (r) {
                     if (r) {
 
-                        window.location.href = "loginuser.aspx";
+                        window.location.href = "../loginuser.aspx";
 
                     }
                 });

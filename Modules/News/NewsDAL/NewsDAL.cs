@@ -70,12 +70,12 @@ namespace Modules.News
         {
             AdoHelper helper = AdoHelper.CreateHelper();
             StringBuilder query = new StringBuilder();
-            query.Append("select * from V_News ");
+            query.Append("SELECT a.*,b.Nickname,c.Title as CategoryName FROM t_news a,t_user b,t_articlecategory c where a.AddedUserId=b.UserId and a.CategoryId=c.CategoryId");
             if (!string.IsNullOrEmpty(strwhere))
             {
-                query.Append(" where "+strwhere+"");
+                query.Append(" and  "+strwhere+"");
             }
-            query.Append(" order by releasedate desc");
+            query.Append(" order by a.releasedate desc");
             return helper.ExecuteDataset(query.ToString()).Tables[0];
         }
         public NewsDetail GetArticleDetail(int newsId)

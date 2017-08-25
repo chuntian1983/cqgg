@@ -131,6 +131,7 @@
     <Compile Include="News\NewsBLL\NewsCategoryBLL.cs" />
     <Compile Include="News\NewsDAL\NewsCategoryDAL.cs" />
     <Compile Include="News\NewsDAL\NewsDAL.cs" />
+    <Compile Include="News\NewsDAL\t_articlecategory.cs" />
     <Compile Include="News\NewsNew\NewsDAL1.cs" />
     <Compile Include="News\NewsNew\NewsModel1.cs" />
     <Compile Include="Page\Page.cs" />

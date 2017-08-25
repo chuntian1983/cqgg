@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AddArticle.aspx.cs" Inherits="SysAdmin_Article_AddOrEditArticle" %>
-<%@ Register Assembly="FredCK.FCKeditorV2" Namespace="FredCK.FCKeditorV2" TagPrefix="FCKeditorV2" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
@@ -63,9 +63,8 @@
                 </tr>
 				<TR bgColor="#f6f9ff">
 					<TD align="right" height="22"><FONT color="#ff6531">新闻内容：</FONT></TD>
-					<TD><fckeditorv2:fckeditor id="fckBody" runat="server" basepath="../../FCKEditor/" 
-                                                    height="400px" >
-                                        </fckeditorv2:fckeditor><FONT color="red">注：请尽量不要从Word中复制内容，以免发生不兼容的情况</FONT></TD>
+					<TD>
+                                        <textarea id="fckBody" runat="server"></textarea><FONT color="red">注：请尽量不要从Word中复制内容，以免发生不兼容的情况</FONT></TD>
 				</TR>
 				<tr bgColor="#f6f9ff">
 					<td align="center" colSpan="2" style="height: 25px">

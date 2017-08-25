@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ADEdit.aspx.cs" Inherits="SysAdmin_AD_ADEdit" %>
-<%@ Register Assembly="FredCK.FCKeditorV2" Namespace="FredCK.FCKeditorV2" TagPrefix="FCKeditorV2" %>
+
 <%@ Register Src="../../Controls/TopButtons.ascx" TagName="TopButtons" TagPrefix="uc1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -106,7 +106,8 @@
 					<tr bgcolor="#f6f9ff">
 						<td align="right" height="22"><font color="#ff6531">弹出广告内容：</font></td>
 						<td align="left" height="22">
-                            <fckeditorv2:fckeditor id="fckBody" runat="server" basepath="../FCKEditor/" height="400px">&nbsp;</fckeditorv2:fckeditor>
+                        <textarea id="fckBody" runat="server"></textarea>
+                         
 							</td>
 					</tr>
 					</asp:panel>

@@ -6,7 +6,7 @@
 <head id="Head1" runat="server">
     <title>无标题页</title>
     <LINK href="../Css/css.css" type="text/css" rel="stylesheet">
-     <script type="text/javascript" src="../JS/calendar.js"></script>
+<script language="javascript" type="text/javascript" src="../My97DatePicker/WdatePicker.js" ></script>
       <script>
       function openWinDialog(url,arg)
       {
@@ -20,11 +20,7 @@
      <table cellSpacing="0" cellPadding="0" width="800" border="0" align="center">
 				<tr><td height="10px"></td></tr>
 				<tr id="trSearchTop" runat="server">
-										<td width="70%">操作发生日期：<asp:textbox id="txtStart" Columns="10" onFocus="this.blur();"
-												Runat="server"></asp:textbox>&nbsp;<img  onclick="meizz_calendar(document.getElementById('txtStart'))"
-                                                               style="cursor:pointer;" src="../images/calendar.gif" /> 到	<asp:textbox id="txtEnd" Columns="10" onFocus="this.blur();" 
-												Runat="server"></asp:textbox>&nbsp;<img  onclick="meizz_calendar(document.getElementById('txtEnd'))"
-                                                               style="cursor:pointer;" src="../images/calendar.gif" /></td>
+										<td width="70%">操作发生日期：<asp:textbox id="txtStart" Columns="10" onclick="WdatePicker()" class="Wdate"	Runat="server"></asp:textbox>&nbsp;到	<asp:textbox id="txtEnd" Columns="10" onclick="WdatePicker()" class="Wdate" Runat="server"></asp:textbox>&nbsp;</td>
 									
 					</tr>
 					<tr id="trSearchButtom" runat="server"><td> 用户昵称：<asp:TextBox ID="txtNickname" runat="server" ></asp:TextBox> IP地址：<asp:TextBox ID="txtIP" runat="server" ></asp:TextBox> &nbsp;<asp:Button ID="btnFind" runat="server" Text="查询" OnClick="btnFind_Click" /></td></tr>

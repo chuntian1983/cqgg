@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ReferView.aspx.cs" Inherits="SysAdmin_Question_ReferView" %>
-<%@ Register Assembly="FredCK.FCKeditorV2" Namespace="FredCK.FCKeditorV2" TagPrefix="FCKeditorV2" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
@@ -84,8 +84,7 @@
                                 <td align="right" style="width: 147px; height: 22px">
                                     <font color="#ff6531">回复内容：</font></td>
                                 <td width="80%" style="height: 22px">
-                                    &nbsp;<fckeditorv2:fckeditor id="fckBody" runat="server" basepath="../../FCKEditor/"
-                                        height="400px"> </fckeditorv2:fckeditor></td>
+                                    &nbsp; <textarea id="Textarea1" runat="server"></textarea></td>
                     </tr>   
                     </asp:panel>      
                        <asp:panel ID="bb" runat="server" Visible="false">   

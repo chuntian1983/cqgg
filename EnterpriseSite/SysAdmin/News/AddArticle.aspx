@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AddArticle.aspx.cs" ValidateRequest="false" Inherits="SysAdmin_News_AddOrEditArticle" %>
-<%@ Register Assembly="FredCK.FCKeditorV2" Namespace="FredCK.FCKeditorV2" TagPrefix="FCKeditorV2" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
@@ -21,6 +21,33 @@
             openWinDialog('../picture/selectpicture.aspx?rdn='+Math.random(),$(showReturnObj));
       }   
     </script>
+     <link rel="stylesheet" href="../kindeditor/themes/default/default.css" />
+	<link rel="stylesheet" href="../kindeditor/plugins/code/prettify.css" />
+	<script charset="utf-8" src="../kindeditor/kindeditor-all-min.js"></script>
+	<script charset="utf-8" src="../kindeditor/lang/zh-CN.js"></script>
+	<script charset="utf-8" src="../kindeditor/plugins/code/prettify.js"></script>
+	<script>
+	    KindEditor.ready(function (K) {
+	        var editor1 = K.create('#content1', {
+	            cssPath: '../kindeditor/plugins/code/prettify.css',
+	            uploadJson: '../kindeditor/asp.net/upload_json.ashx',
+	            fileManagerJson: '../kindeditor/asp.net/file_manager_json.ashx',
+	            allowFileManager: true,
+	            afterCreate: function () {
+	                var self = this;
+	                K.ctrl(document, 13, function () {
+	                    self.sync();
+	                    K('form[name=example]')[0].submit();
+	                });
+	                K.ctrl(self.edit.doc, 13, function () {
+	                    self.sync();
+	                    K('form[name=example]')[0].submit();
+	                });
+	            }
+	        });
+	        prettyPrint();
+	    });
+	</script>
 
     <base target="_self" />
 </head>
@@ -93,9 +120,9 @@
                 </asp:panel>
 				<TR bgColor="#f6f9ff">
 					<TD align="right" height="22" style="width: 219px"><FONT color="#ff6531">新闻内容：</FONT></TD>
-					<TD><fckeditorv2:fckeditor id="fckBody" runat="server" basepath="../../FCKEditor/" 
-                                                    height="400px" >
-                                        </fckeditorv2:fckeditor><FONT color="red">注：请尽量不要从Word中复制内容，以免发生不兼容的情况</FONT></TD>
+					<TD>
+                    <textarea id="content1" cols="100" rows="8" style="width:700px;height:200px;visibility:hidden;" runat="server"></textarea>
+                    </TD>
 				</TR>
                 <tr bgcolor="#f6f9ff" style="display:none">
                     <td align="right" height="22" style="width: 219px">

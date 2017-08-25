@@ -42,7 +42,8 @@ public partial class SysAdmin_News_AddOrEditArticle : System.Web.UI.Page
                 int articleId = Convert.ToInt32(this._articleId);
                 NewsDetail detail = this._article.GetArticleDetail(articleId);
                 this.txtTitle.Text = detail.Title;
-                this.fckBody.Value = detail.Body;
+          
+                this.content1.Value = detail.Body;
                 this.txtUnit.Text = detail.PublicationUnit;
                 this.txtReleaseDate.Text = detail.ReleaseDate;
                 this.txtExpireDate.Text =detail.ExpireDate;
@@ -271,7 +272,7 @@ public partial class SysAdmin_News_AddOrEditArticle : System.Web.UI.Page
           detail=  this._article.GetArticleDetail(int.Parse(this._articleId));
         }
         detail.Title = this.txtTitle.Text.Trim();
-        detail.Body = this.fckBody.Value.Replace("'", "''");
+        detail.Body = this.content1.Value;
      
         detail.PublicationUnit = this.txtUnit.Text.Trim();
         string release = this.txtReleaseDate.Text.Trim();
@@ -344,7 +345,8 @@ public partial class SysAdmin_News_AddOrEditArticle : System.Web.UI.Page
                 this.txtUnit.Text = String.Empty;
                 this.txtReleaseDate.Text = String.Empty;
                 this.txtExpireDate.Text = String.Empty;
-                this.fckBody.Value = String.Empty;
+                
+                this.content1.Value = string.Empty;
                 this.txtPrice.Text = string.Empty;
                 this.a.Visible = false;
                 this.Label1.Text = "新闻名称";
@@ -432,9 +434,9 @@ public partial class SysAdmin_News_AddOrEditArticle : System.Web.UI.Page
             //dal1.Add(model1);
             JSUtility.Alert("附件上传成功！");
             //---------
-            ContentInfo = this.fckBody.Value.ToString();
+            ContentInfo = this.content1.Value.ToString();
             string url = "<a href='" + this.ResolveUrl(path) + "'>" + model1.FileName + "</a>";
-            this.fckBody.Value = ContentInfo+url;
+            this.content1.Value = ContentInfo+url;
             //---------
             this.txtFileName.Text = "";
             this.txtDescription.Text = "";

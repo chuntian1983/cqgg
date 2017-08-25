@@ -54,15 +54,18 @@ public partial class SysAdmin_News_AddCategory1 : System.Web.UI.Page
     }
     protected void btnSave_Click(object sender, EventArgs e)
     {
-        NewsCategoryDetail detail = new NewsCategoryDetail();
+        //NewsCategoryDetail detail = new NewsCategoryDetail();
+        Modules.News.t_articlecategory detail = new t_articlecategory();
         detail.Title = this.txtTitle.Text.Trim();
         detail.Sort = Convert.ToInt32(this.txtSort.Text.Trim());
         detail.Type = 1;
         detail.ParentCategoryId = Convert.ToInt32(this.ddlParentCategory.SelectedValue);
+        detail.AddedDate = System.DateTime.Now.ToString("yyyy-MM-dd");
         if (this._categoryId != null)
         {
             detail.CategoryId = Convert.ToInt32(this._categoryId);
-            this._category.UpdateCategory(detail);
+            //this._category.UpdateCategory(detail);
+            detail.Update();
 
             JSUtility.AlertAndRedirect("修改成功!", "CategoryTree.Aspx");
 
@@ -70,7 +73,8 @@ public partial class SysAdmin_News_AddCategory1 : System.Web.UI.Page
         else
         {
             detail.AddedUserId = Convert.ToInt32(this._userId);
-            this._category.AddCategory(detail);
+            //this._category.AddCategory(detail);
+            detail.Add();
             this.ddlParentCategory.Items.Clear();
             BindParentCategory();
 
