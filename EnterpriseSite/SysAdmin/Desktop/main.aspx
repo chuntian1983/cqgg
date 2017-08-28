@@ -5,9 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title>
-        产权制度改革自助管理系统</title>
-    <meta name="description" content="产权制度改革自助管理系统" />
-    <meta name="keywords" content="产权制度改革自助管理系统" />
+        三资网站自助管理系统</title>
+    <meta name="description" content="三资网站自助管理系统" />
+    <meta name="keywords" content="三资网站自助管理系统" />
     <link href="../Scripts/easyUI/themes/default/easyui.css" rel="stylesheet" type="text/css" />
     <link href="../Styles/default.css" rel="stylesheet" type="text/css" />
     <link href="../Scripts/easyUI/themes/icon.css" rel="stylesheet" type="text/css" />
@@ -168,7 +168,7 @@
         background-image: url(images/bg.jpg); line-height: 20px; color: #fff;">
         <div class="topbg1">
             <div class="topleft1" style="height:91px; padding-top:0px; line-height:91px; vertical-align:middle; color:White; background-image:url('1.jpg')">
-                农村产权制度改革自助管理系统</div>
+                三资网站自助管理系统</div>
             <div class="topright1">
                 <span id="v" runat="server"></span>&nbsp;&nbsp;
                <span id="lblUserName" runat="server" style="color: Yellow;"></span>&nbsp;&nbsp;&nbsp;&nbsp;<a
@@ -178,7 +178,7 @@
     </div>
     <div region="south" split="true" style="height: 27px; background: #D2E0F2;">
         <div class="footer">
-            产权制度改革自助管理系统 
+            三资网站自助管理系统 
         </div>
     </div>
     <div region="west" split="true" title="菜单列表" style="width: 180px;" id="west">
@@ -197,16 +197,7 @@
         </div>
         </ItemTemplate>
         </asp:Repeater>
-       <div title="系统管理" data-options="iconCls:'icon-ok'" style="overflow:auto;">
-                   <ul>
-                      <div><a ref="1" href="#" rel="Department/categorytree.aspx"><span class="icon icon-nav">&nbsp;</span><span class="nav">组织单位管理</span></a></div><br/>
-                      <div><a ref="2" href="#" rel="Department/addcategory.aspx"><span class="icon icon-nav">&nbsp;</span><span class="nav">组织单位添加</span></a></div><br/>
-                      <div><a ref="2" href="#" rel="department/pladd.aspx"><span class="icon icon-nav">&nbsp;</span><span class="nav">组织单位批量添加</span></a></div><br/>
-                      <div><a ref="2" href="#" rel="account/user/modifyPWD.aspx"><span class="icon icon-nav">&nbsp;</span><span class="nav">用户密码修改</span></a></div><br/>
-                      <div><a ref="2" href="#" rel="err.aspx" id="loginOut2"><span class="icon icon-nav">&nbsp;</span><span class="nav">安全退出</span></a></div><br/>
-                   </ul>
-        
-        </div>
+       
         </div>
     </div>
     <div id="mainPanle" region="center" style="background: #eee; overflow-y: hidden">

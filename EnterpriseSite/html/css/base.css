@@ -1,0 +1,28 @@
+*{padding:0; margin: 0;}
+body,li,ul,div,span,b,p{padding:0;margin: 0;font-family: "Microsoft YaHei",arial,courier new,courier,"宋体",monospace; font-size: 16px; color: #515151;}
+
+h1,h2,h3{
+	font-weight: normal;
+}
+
+img{border:0;}
+/*继承父元素大小*/
+ul,li{list-style: none;}
+
+.fl{float: left;}
+.fr{float: right;}
+.fl,.fr{display: inline;}
+
+a {color:#515151; text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {color:#c41e1f;text-decoration:none;}
+a:active {color:#515151;}
+
+.clear{clear:both;}
+.clearfix{*zoom:1;}/*ie*/
+.clearfix:after{display: block; overflow: hidden;clear:both; height: 0; visibility: hidden; content: " ";}/*清除浮动*/
+
+.spacing{
+	margin-top:14px;
+}
+

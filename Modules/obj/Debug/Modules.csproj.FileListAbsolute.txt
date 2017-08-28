@@ -158,3 +158,4 @@ F:\mywork\长洲区股权清产核资\产权连接\EnterpriseSite\Modules\bin\De
 F:\mywork\长洲区股权清产核资\产权连接\EnterpriseSite\Modules\bin\Debug\Maticsoft.DBUtility.pdb
 F:\mywork\长洲区股权清产核资\产权连接\EnterpriseSite\Modules\obj\Debug\Modules.dll
 F:\mywork\长洲区股权清产核资\产权连接\EnterpriseSite\Modules\obj\Debug\Modules.pdb
+F:\mywork\长洲区股权清产核资\产权连接\EnterpriseSite\Modules\obj\Debug\Modules.csprojResolveAssemblyReference.cache

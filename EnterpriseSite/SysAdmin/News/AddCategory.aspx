@@ -6,6 +6,7 @@
 <head >
     <title>无标题页</title>
     <LINK href="../Css/css.css" type="text/css" rel="stylesheet">
+    <script language="javascript" type="text/javascript" src="../My97DatePicker/WdatePicker.js" ></script>
 </head>
 <body>
     <form id="Form1" runat="server" method="post">

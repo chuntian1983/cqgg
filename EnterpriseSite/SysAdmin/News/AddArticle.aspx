@@ -6,8 +6,8 @@
 <head runat="server">
     <title>无标题页</title>
     <link href="../Css/css.css" type="text/css" rel="stylesheet" />
-  <script type="text/javascript" src="../JS/calendar.js"></script>
 
+    <script language="javascript" type="text/javascript" src="../My97DatePicker/WdatePicker.js" ></script>
     <script type="text/jscript" src="../js/prototype.js"></script>
 
     <script>
@@ -100,8 +100,7 @@
 				</tr>
 				<tr bgColor="#f6f9ff">
 					<td align="right" height="22" style="width: 219px"><font color="#ff6531">发布时间：</font></td>
-					<td><asp:textbox id="txtReleaseDate" runat="server" Width="432px" onFocus="this.blur()"></asp:textbox>&nbsp;<img  onclick="meizz_calendar(document.getElementById('txtReleaseDate'))"
-                                                               style="cursor:pointer;" src="../images/calendar.gif" /><br />
+					<td><asp:textbox id="txtReleaseDate" runat="server" Width="432px" onclick="WdatePicker()" class="Wdate"></asp:textbox>&nbsp;<br />
                         <span style="color: #ff0000">注：发布时间请不要超出当前时间。</span></td>
 				</tr>
 				<asp:panel ID="cc" Visible="false" runat="server">

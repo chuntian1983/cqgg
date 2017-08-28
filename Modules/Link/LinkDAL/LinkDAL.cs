@@ -108,7 +108,7 @@ namespace Modules.Link
         public bool DeleteLink(int linkId)
         {
             AdoHelper helper = AdoHelper.CreateHelper();
-            string sql = String.Format("delete T_Link where LinkId={0}", linkId);
+            string sql = String.Format("delete from T_Link where LinkId='{0}'", linkId);
             return helper.ExecuteNonQuery(sql) > 0;
         }
 

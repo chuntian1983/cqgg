@@ -4,7 +4,7 @@
 
 <html>
 <head id="Head1" runat="server">
-    <title>产权制度改革自助管理系统</title>
+    <title>三资网站自助管理系统</title>
     <script src="Scripts/easyUI/jquery.min.js" type="text/javascript" language="javascript"></script>
     <script src="Scripts/easyUI/jquery.easyui.min.js" type="text/javascript" language="javascript"></script>
     <script src="Scripts/easyUI/locale/easyui-lang-zh_CN.js" type="text/javascript" language="javascript"></script>
@@ -96,7 +96,7 @@ body
         <div class="login">
             <div class="form">
                 <p>
-                    产权制度改革自助管理系统
+                    三资网站自助管理系统
                 </p>
                 <ul>
                     <li>用户名：
