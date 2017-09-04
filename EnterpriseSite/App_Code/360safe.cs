@@ -72,6 +72,115 @@ public class safe_360
             return false;
         }
     }
+    /// <summary>
+    /// 判断是否非法字符true为合法
+    /// </summary>
+    /// <param name="str_char"></param>
+    /// <returns></returns>
+    public static bool CheckFromIn(string str_char)
+    {
+        if (str_char.IndexOf("'") >= 0)
+        {
+            return false;
+        }
+        else if (str_char.IndexOf("!") >= 0)
+        {
 
-  
+            return false;
+        }
+        else if (str_char.IndexOf("or") >= 0)
+        {
+
+            return false;
+        }
+        else if (str_char.IndexOf("delete") >= 0)
+        {
+            return false;
+        }
+        else if (str_char.IndexOf("and") >= 0)
+        {
+            return false;
+        }
+        else if (str_char.IndexOf("update") >= 0)
+        {
+            return false;
+        }
+        else if (str_char.IndexOf("insert") >= 0)
+        {
+            return false;
+        }
+        else if (str_char.IndexOf(";") >= 0)
+        {
+            return false;
+        }
+        else if (str_char.IndexOf("master") >= 0)
+        {
+            return false;
+        }
+        else if (str_char.IndexOf("mid") >= 0)
+        {
+            return false;
+        }
+        else if (str_char.IndexOf("user") >= 0)
+        {
+            return false;
+        }
+        else if (str_char.IndexOf("db_name") >= 0)
+        {
+            return false;
+        }
+        else if (str_char.IndexOf("backup") >= 0)
+        {
+            return false;
+        }
+        else if (str_char.IndexOf("select") >= 0)
+        {
+            return false;
+        }
+        else if (str_char.IndexOf("char") >= 0)
+        {
+            return false;
+        }
+        else if (str_char.IndexOf("nchar") >= 0)
+        {
+            return false;
+        }
+        else if (str_char.IndexOf("xp_cmdshell") >= 0)
+        {
+            return false;
+        }
+        else if (str_char.IndexOf(",") >= 0)
+        {
+            return false;
+        }
+        else if (str_char.IndexOf("--") >= 0)
+        {
+            return false;
+        }
+        else if (str_char.IndexOf("exec") >= 0)
+        {
+            return false;
+        }
+        else if (str_char.IndexOf("from") >= 0)
+        {
+            return false;
+        }
+        else if (str_char.IndexOf("update") >= 0)
+        {
+            return false;
+        }
+        else if (str_char.IndexOf("count") >= 0)
+        {
+            return false;
+        }
+        else if (str_char.IndexOf("/") >= 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
 }

@@ -30,10 +30,11 @@ public partial class list : System.Web.UI.Page
     private void BindLog()
     {
         string strid=Request.QueryString["lb"];
-        if (safe_360.CheckData(strid))
+        if (!safe_360.CheckFromIn(strid))
         {
             MessageBox.Show(this, "该参数含有特殊字符！");
-            return;
+            Response.Redirect("index.aspx");
+            
         }
         Modules.News.NewsBLL bll = new Modules.News.NewsBLL();
         string strsql = "select * from t_news where Approved='1' and CategoryId='"+strid+"'";
