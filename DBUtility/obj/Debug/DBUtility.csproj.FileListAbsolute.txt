@@ -60,3 +60,8 @@ E:\mywork\f烟台福山区农廉\mysqlnonglian\EnterpriseSite\DBUtility\bin\Debu
 E:\mywork\f烟台福山区农廉\mysqlnonglian\EnterpriseSite\DBUtility\obj\Debug\DBUtility.csprojResolveAssemblyReference.cache
 E:\mywork\f烟台福山区农廉\mysqlnonglian\EnterpriseSite\DBUtility\obj\Debug\Maticsoft.DBUtility.dll
 E:\mywork\f烟台福山区农廉\mysqlnonglian\EnterpriseSite\DBUtility\obj\Debug\Maticsoft.DBUtility.pdb
+F:\mywork\安阳三资网站\安阳三资网站\DBUtility\obj\Debug\Maticsoft.DBUtility.pdb
+F:\mywork\安阳三资网站\安阳三资网站\DBUtility\bin\Debug\Maticsoft.DBUtility.dll
+F:\mywork\安阳三资网站\安阳三资网站\DBUtility\bin\Debug\Maticsoft.DBUtility.pdb
+F:\mywork\安阳三资网站\安阳三资网站\DBUtility\obj\Debug\Maticsoft.DBUtility.dll
+F:\mywork\安阳三资网站\安阳三资网站\DBUtility\bin\Debug\MySql.Data.dll

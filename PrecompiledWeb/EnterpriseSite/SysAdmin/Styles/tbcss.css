@@ -1,0 +1,42 @@
+﻿.table
+{
+    border-right: 1px solid #7BB7E3;
+    border-bottom: 1px solid #7BB7E3;
+    font-size: 12px;
+    padding-left: 10px;
+}
+.table td
+{
+    border-left: 1px solid #7BB7E3;
+    border-top: 1px solid #7BB7E3;
+    font-size: 12px;
+    padding-left: 10px;
+}
+.tb
+{
+    padding-left: 30px;
+}
+
+.txt
+{
+    border-right: #9CBFDB 1px solid;
+    border-top: #9CBFDB 1px solid;
+    border-left: #9CBFDB 1px solid;
+    border-bottom: #9CBFDB 1px solid;
+}
+
+.btn
+{
+    border-right: #7b9ebd 1px solid;
+    padding-right: 2px;
+    border-top: #7b9ebd 1px solid;
+    padding-left: 2px;
+    font-size: 12px;
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#cecfde);
+    border-left: #7b9ebd 1px solid;
+    cursor: hand;
+    color: black;
+    padding-top: 2px;
+    border-bottom: #7b9ebd 1px solid;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#96CDCD,endColorStr=#FFFFFF);
+}

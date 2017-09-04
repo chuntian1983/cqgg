@@ -1,0 +1,3 @@
+F:\mywork\安阳三资网站\安阳三资网站\Common\obj\Release\Common.csprojResolveAssemblyReference.cache
+F:\mywork\安阳三资网站\安阳三资网站\Common\bin\Release\Modules.T_BMFW.Common.dll
+F:\mywork\安阳三资网站\安阳三资网站\Common\obj\Release\Modules.T_BMFW.Common.dll

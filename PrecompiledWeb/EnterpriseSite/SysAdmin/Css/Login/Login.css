@@ -1,0 +1,36 @@
+.top {
+	FONT-SIZE: 12px; COLOR: #666666; TEXT-DECORATION: none
+}
+.b {
+	FONT-SIZE: 12px; COLOR: #4487bc; TEXT-DECORATION: none
+}
+.conn {
+	FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 160%; TEXT-DECORATION: none
+}
+.title {
+	FONT-SIZE: 12px; COLOR: #000000; BACKGROUND-COLOR: #efefef; TEXT-DECORATION: none
+}
+.row2 {
+	FONT-SIZE: 12px; COLOR: #000000; BACKGROUND-COLOR: #ffffff; TEXT-DECORATION: none
+}
+.row1 {
+	FONT-SIZE: 12px; COLOR: #000000; BACKGROUND-COLOR: #f7f7f7; TEXT-DECORATION: none
+}
+.info_row1 {
+	FONT-SIZE: 12px; COLOR: #000000; BACKGROUND-COLOR: #f7f7f7; TEXT-DECORATION: none
+}
+.info_title {
+	FONT-SIZE: 12px; COLOR: #003333; BACKGROUND-COLOR: #e9f9ff; TEXT-DECORATION: none
+}
+.input_text {
+	BORDER-RIGHT: #ffffff 1px solid; BORDER-TOP: #999999 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #999999 1px solid; WIDTH: 150px; COLOR: #666666; BORDER-BOTTOM: #ffffff 1px solid; BACKGROUND-COLOR: transparent
+}
+.info_row2 {
+	FONT-SIZE: 12px; COLOR: #000000; BACKGROUND-COLOR: #ffffff; TEXT-DECORATION: none
+}
+.input_button1 {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #eeeeee 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #eeeeee 1px solid; BORDER-BOTTOM: #000000 1px solid; HEIGHT: 22px; BACKGROUND-COLOR: #eeeeee
+}
+.input {
+	BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; BORDER-LEFT: #999999 1px solid; BORDER-BOTTOM: #999999 1px solid
+}

@@ -1,0 +1,10 @@
+F:\mywork\安阳三资网站\安阳三资网站\Modules\obj\Release\Modules.csprojResolveAssemblyReference.cache
+F:\mywork\安阳三资网站\安阳三资网站\Modules\bin\Release\Modules.dll
+F:\mywork\安阳三资网站\安阳三资网站\Modules\bin\Release\Modules.pdb
+F:\mywork\安阳三资网站\安阳三资网站\Modules\bin\Release\CommonUtility.dll
+F:\mywork\安阳三资网站\安阳三资网站\Modules\bin\Release\Maticsoft.DBUtility.dll
+F:\mywork\安阳三资网站\安阳三资网站\Modules\bin\Release\myjmail.dll
+F:\mywork\安阳三资网站\安阳三资网站\Modules\bin\Release\MySql.Data.dll
+F:\mywork\安阳三资网站\安阳三资网站\Modules\bin\Release\CommonUtility.pdb
+F:\mywork\安阳三资网站\安阳三资网站\Modules\obj\Release\Modules.dll
+F:\mywork\安阳三资网站\安阳三资网站\Modules\obj\Release\Modules.pdb

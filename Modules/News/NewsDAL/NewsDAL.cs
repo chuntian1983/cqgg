@@ -22,6 +22,8 @@ namespace Modules.News
         public int ViewCount;
         public string ImgLink;//用于放医疗服务价格信息//存部门id
         public int IsState;//首页图片状态
+        public string imgpath;
+        public string imgname;
     }
     internal class NewsDAL
     {
@@ -101,6 +103,16 @@ namespace Modules.News
             detail.ViewCount = (int)articleInfo["ViewCount"];
             detail.ImgLink = articleInfo["ImgLink"].ToString();
             detail.IsState = (int)articleInfo["IsState"];
+            try
+            {
+                detail.imgpath = articleInfo["imgpath"].ToString();
+            }
+            catch { detail.imgpath = string.Empty; }
+            try
+            {
+                detail.imgname = articleInfo["imgname"].ToString();
+            }
+            catch { detail.imgname = string.Empty; }
             return detail;
 
         }
@@ -109,10 +121,10 @@ namespace Modules.News
                        string unit, string release,
                        string expire,
                        int categoryId, int approved,
-                       int viewCount, int addedUserId, string imgLink, int IsState)
+                       int viewCount, int addedUserId, string imgLink, int IsState,string imgpath,string imgname)
         {
             AdoHelper helper = AdoHelper.CreateHelper();
-            IDataParameter[] paras = new IDataParameter[12];
+            IDataParameter[] paras = new IDataParameter[14];
             paras[0] = helper.GetParameter("@Title", title);
             paras[1] = helper.GetParameter("@Body", body);
             paras[2] = helper.GetParameter("@PublicationUnit", unit);
@@ -125,8 +137,10 @@ namespace Modules.News
             paras[9] = helper.GetParameter("@ImgLink", imgLink);
             paras[10] = helper.GetParameter("@NewsId",DbType.Int32,4,ParameterDirection.Output);
             paras[11] = helper.GetParameter("@IsState", IsState);
-            string strsql = @"insert into T_News (Title,Body,PublicationUnit,ReleaseDate,ExpireDate,CategoryId,Approved,ViewCount,AddedUserId,ImgLink,IsState)
-values (@Title,@Body,@PublicationUnit,@ReleaseDate,@ExpireDate,@CategoryId,@Approved,@ViewCount,@AddedUserId,@ImgLink,@IsState)";
+            paras[12] = helper.GetParameter("@imgpath",imgpath);
+            paras[13] = helper.GetParameter("@imgname",imgname);
+            string strsql = @"insert into T_News (Title,Body,PublicationUnit,ReleaseDate,ExpireDate,CategoryId,Approved,ViewCount,AddedUserId,ImgLink,IsState,imgpath,imgname)
+values (@Title,@Body,@PublicationUnit,@ReleaseDate,@ExpireDate,@CategoryId,@Approved,@ViewCount,@AddedUserId,@ImgLink,@IsState,@imgpath,@imgname)";
             helper.ExecuteNonQuery(helper.connectionString, CommandType.Text, strsql, paras);
            // helper.ExecuteNonQuery("sp_News_Add", paras);
             return Convert.ToInt32(paras[10].Value);
@@ -136,16 +150,16 @@ values (@Title,@Body,@PublicationUnit,@ReleaseDate,@ExpireDate,@CategoryId,@Appr
         {
             return this.Add(detail.Title, detail.Body, detail.PublicationUnit,
                             detail.ReleaseDate, detail.ExpireDate,
-                            detail.CategoryId, detail.Approved, detail.ViewCount, detail.AddedUserId, detail.ImgLink, detail.IsState);
+                            detail.CategoryId, detail.Approved, detail.ViewCount, detail.AddedUserId, detail.ImgLink, detail.IsState,detail.imgpath,detail.imgname);
         }
 
         public bool Update(int newsId, string title, string body,
                            string unit, string release, string expire,
-                           int categoryId, int approved, int viewCount,string imgLink,int isState)
+                           int categoryId, int approved, int viewCount,string imgLink,int isState,string imgpath,string imgname)
         {
             AdoHelper helper = AdoHelper.CreateHelper();
             StringBuilder sql = new StringBuilder();
-            IDataParameter[] paras = new IDataParameter[11];
+            IDataParameter[] paras = new IDataParameter[13];
             paras[0] = helper.GetParameter("@Title", title);
             paras[1] = helper.GetParameter("@Body", body);
             paras[2] = helper.GetParameter("@PublicationUnit", unit);
@@ -157,10 +171,12 @@ values (@Title,@Body,@PublicationUnit,@ReleaseDate,@ExpireDate,@CategoryId,@Appr
             paras[8] = helper.GetParameter("@ImgLink", imgLink);
             paras[9] = helper.GetParameter("@IsState", isState);
             paras[10] = helper.GetParameter("@NewsId", newsId);
+            paras[11] = helper.GetParameter("@imgpath",imgpath);
+            paras[12] = helper.GetParameter("@imgname",imgname);
             sql.Append("update T_News set Title=@Title,Body=@Body,PublicationUnit=@PublicationUnit,");
             sql.Append("ReleaseDate=@ReleaseDate,ExpireDate=@ExpireDate,CategoryId=@CategoryId,");
             sql.Append("ImgLink=@ImgLink,IsState=@IsState,");
-            sql.Append("Approved=@Approved,ViewCount=@ViewCount where NewsId=@NewsId");
+            sql.Append("Approved=@Approved,ViewCount=@ViewCount,imgpath=@imgpath,imgname=@imgname where NewsId=@NewsId");
             return helper.ExecuteNonQuery(helper.connectionString,CommandType.Text, sql.ToString(),paras) > 0;
         }
        
@@ -168,7 +184,7 @@ values (@Title,@Body,@PublicationUnit,@ReleaseDate,@ExpireDate,@CategoryId,@Appr
         {
             return this.Update(detail.NewsId, detail.Title, detail.Body,
                                detail.PublicationUnit, detail.ReleaseDate, detail.ExpireDate,
-                               detail.CategoryId, detail.Approved, detail.ViewCount,detail.ImgLink,detail.IsState);
+                               detail.CategoryId, detail.Approved, detail.ViewCount,detail.ImgLink,detail.IsState,detail.imgpath,detail.imgname);
         }
 
         public DataSet GetAllArticleDetailes()

@@ -1,0 +1,4 @@
+F:\mywork\安阳三资网站\安阳三资网站\DBUtility\obj\Release\DBUtility.csprojResolveAssemblyReference.cache
+F:\mywork\安阳三资网站\安阳三资网站\DBUtility\bin\Release\Maticsoft.DBUtility.dll
+F:\mywork\安阳三资网站\安阳三资网站\DBUtility\bin\Release\MySql.Data.dll
+F:\mywork\安阳三资网站\安阳三资网站\DBUtility\obj\Release\Maticsoft.DBUtility.dll

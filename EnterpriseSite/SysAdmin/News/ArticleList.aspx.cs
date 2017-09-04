@@ -268,25 +268,25 @@ public partial class SysAdmin_News_ArticleList : System.Web.UI.Page
     {
         StringBuilder filter = new StringBuilder();
         filter.Append("1=1");
-        string starDate = this.txtStart.Text.Trim();
-        string endDate = this.txtEnd.Text.Trim();
+        //string starDate = this.txtStart.Text.Trim();
+        //string endDate = this.txtEnd.Text.Trim();
         string title = this.txtTitle.Text.Trim();
         string type = this.ddlCategory.SelectedValue;
         string approved=this.ddlApproved.SelectedValue;
-        if (starDate != String.Empty) filter.AppendFormat(" and a.AddedDate>='{0}'", starDate);
-        if (endDate != String.Empty) filter.AppendFormat(" and a.AddedDate<='{0}'", endDate);
+        //if (starDate != String.Empty) filter.AppendFormat(" and a.AddedDate>='{0}'", starDate);
+        //if (endDate != String.Empty) filter.AppendFormat(" and a.AddedDate<='{0}'", endDate);
         if (title != String.Empty) filter.AppendFormat(" and a.Title like '%{0}%'", title);
         if (type != "0") filter.AppendFormat(" and a.CategoryId={0}", type);
         if (approved != "-1") filter.AppendFormat(" and a.Approved={0}", approved);
-        //王浩 修改 2012-4-10
-        string uid = HttpContext.Current.User.Identity.Name;
-        UserBLL ub = new UserBLL();
-        UserDetail ud = new UserDetail();
-        ud = ub.GetUserDetail(int.Parse(uid));
-        if (uid != "1")
-        {
-            filter.Append(" and a.imglink='" + ud.Email + "'");
-        }
+        ////王浩 修改 2012-4-10
+        //string uid = HttpContext.Current.User.Identity.Name;
+        //UserBLL ub = new UserBLL();
+        //UserDetail ud = new UserDetail();
+        //ud = ub.GetUserDetail(int.Parse(uid));
+        //if (uid != "1")
+        //{
+        //    filter.Append(" and a.imglink='" + ud.Email + "'");
+        //}
         ViewState["Filter"] = filter.ToString();
     }
     private void BindArticle()

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AddArticle.aspx.cs" ValidateRequest="false" Inherits="SysAdmin_News_AddOrEditArticle" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AddArticle.aspx.cs" ValidateRequest="false" Inherits="SysAdmin_News_AddOrEditArticle"  Debug="true" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -74,6 +74,13 @@
                         <asp:Label ID="Label1" runat="server" Text="新闻标题"></asp:Label>：</font></td>
 					<td><asp:textbox id="txtTitle" runat="server" Width="432px"></asp:textbox><FONT color="red">*</FONT></td>
 				</tr>
+                <tr bgcolor="#f6f9ff" >
+                    <td align="right" style="width: 219px; height: 20px">
+                        <span style="color: #ff6531">新闻信息简要描述：</span></td>
+                    <td style="height: 20px">
+                        <asp:TextBox ID="txtFileName" runat="server" style="width: 432px"></asp:TextBox>
+                        </td>
+                </tr>
 				<asp:Panel ID="aa" Visible="false" runat="server">
                 <tr bgcolor="#f6f9ff">
                     <td align="right" style="width: 219px; height: 22px">
@@ -123,32 +130,19 @@
                     <textarea id="content1" cols="100" rows="8" style="width:700px;height:200px;visibility:hidden;" runat="server"></textarea>
                     </TD>
 				</TR>
-                <tr bgcolor="#f6f9ff" style="display:none">
+                <tr bgcolor="#f6f9ff" >
                     <td align="right" height="22" style="width: 219px">
-                        <span style="color: #ff6531">上传附件：</span></td>
+                        <span style="color: #ff6531">上传图片：</span></td>
                     <td>
-                        <input id="fileUpload" runat="server" name="fileUpload" type="file" />
-                        </td>
+                        <asp:FileUpload ID="fileUpload" runat="server" />
+                        建议首页新闻图片大小630*350</td>
                 </tr>
-                <tr bgcolor="#f6f9ff" style="display:none">
-                    <td align="right" style="width: 219px; height: 20px">
-                        <span style="color: #ff6531">文件名称：</span></td>
-                    <td style="height: 20px">
-                        <asp:TextBox ID="txtFileName" runat="server" BorderStyle="Groove"></asp:TextBox>
-                        </td>
-                </tr>
-                <tr bgcolor="#f6f9ff" style="display:none">
-                    <td align="right" style="width: 219px; height: 20px">
-                        <span style="color: #ff6531">描述：</span></td>
-                    <td style="height: 20px">
-                        <asp:TextBox ID="txtDescription" runat="server" BorderStyle="Groove" Height="54px"
-                            TextMode="MultiLine" Width="212px"></asp:TextBox>
-                        <asp:Button ID="btnSave" runat="server" OnClick="Button1_Click" Text="保存" /></td>
-                </tr>
+                
 				<tr bgColor="#f6f9ff" >
 					<td align="center" colSpan="2" height="25">
 						<asp:button id="btnSubmit" runat="server" Width="80px" CssClass="input" Text="确定" OnClick="btnSubmit_Click"></asp:button>&nbsp;
-						<span id="spanBack" runat="server" visible="false"><input type="button" value="返回" onclick="history.go(-1);" class="input" /></span>
+                        <asp:Button ID="spanBack" runat="server" Text="返回" Width="80px" CssClass="input" 
+                            onclick="Button2_Click" />
 						
 					</td>
 				</tr>

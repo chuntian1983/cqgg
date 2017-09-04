@@ -23,3 +23,8 @@ E:\mywork\济南农廉\huaiyin\mysqlnonglian\EnterpriseSite\CommonUtility\bin\De
 E:\mywork\济南农廉\huaiyin\mysqlnonglian\EnterpriseSite\CommonUtility\bin\Debug\CommonUtility.pdb
 E:\mywork\济南农廉\huaiyin\mysqlnonglian\EnterpriseSite\CommonUtility\obj\Debug\CommonUtility.dll
 E:\mywork\济南农廉\huaiyin\mysqlnonglian\EnterpriseSite\CommonUtility\obj\Debug\CommonUtility.pdb
+F:\mywork\安阳三资网站\安阳三资网站\CommonUtility\bin\Debug\CommonUtility.dll
+F:\mywork\安阳三资网站\安阳三资网站\CommonUtility\bin\Debug\CommonUtility.pdb
+F:\mywork\安阳三资网站\安阳三资网站\CommonUtility\obj\Debug\CommonUtility.csprojResolveAssemblyReference.cache
+F:\mywork\安阳三资网站\安阳三资网站\CommonUtility\obj\Debug\CommonUtility.dll
+F:\mywork\安阳三资网站\安阳三资网站\CommonUtility\obj\Debug\CommonUtility.pdb

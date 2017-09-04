@@ -14,6 +14,7 @@ using Modules.File;
 using CommonUtility;
 using System.IO;
 using Modules.News;
+using Maticsoft.Common;
 
 
 
@@ -48,6 +49,7 @@ public partial class SysAdmin_News_AddOrEditArticle : System.Web.UI.Page
                 this.txtReleaseDate.Text = detail.ReleaseDate;
                 this.txtExpireDate.Text =detail.ExpireDate;
                 this.ddlType.SelectedValue = detail.CategoryId.ToString();
+                this.txtFileName.Text = detail.imgname;
                 if (this.ddlType.SelectedValue == "122")
                 {
                     this.Label1.Text = "医疗服务名称";
@@ -273,7 +275,19 @@ public partial class SysAdmin_News_AddOrEditArticle : System.Web.UI.Page
         }
         detail.Title = this.txtTitle.Text.Trim();
         detail.Body = this.content1.Value;
-     
+        if (fileUpload.HasFile)
+        {
+            string strhz = Path.GetExtension(fileUpload.PostedFile.FileName).ToLower();
+            if (strhz == ".gif" || strhz == ".jpg" || strhz == ".jpeg" || strhz == ".png")
+            {
+                string strpath = Server.MapPath("../../upload/");
+                fileUpload.SaveAs(strpath + fileUpload.PostedFile.FileName);
+                detail.imgpath = fileUpload.PostedFile.FileName;
+                
+            }
+            else { MessageBox.Show(this, "文件上传类型不符合要求，请上传图片格式文件！"); return; }
+        }
+        detail.imgname = this.txtFileName.Text;
         detail.PublicationUnit = this.txtUnit.Text.Trim();
         string release = this.txtReleaseDate.Text.Trim();
         if (release == String.Empty) detail.ReleaseDate = DateTime.Now.ToString();
@@ -345,7 +359,7 @@ public partial class SysAdmin_News_AddOrEditArticle : System.Web.UI.Page
                 this.txtUnit.Text = String.Empty;
                 this.txtReleaseDate.Text = String.Empty;
                 this.txtExpireDate.Text = String.Empty;
-                
+                this.txtFileName.Text = string.Empty;
                 this.content1.Value = string.Empty;
                 this.txtPrice.Text = string.Empty;
                 this.a.Visible = false;
@@ -417,7 +431,7 @@ public partial class SysAdmin_News_AddOrEditArticle : System.Web.UI.Page
             model1.FilePath = String.Format("{0}/{1}/{2}{3}", now.Year, now.Month, now.Ticks, extensionName);
             model1.FileName = this.txtFileName.Text.Trim();
             model1.DownloadCount = 0;
-            model1.Description = this.txtDescription.Text.ToString();
+            model1.Description = "";
             model1.FileCategoryId = 100;
             model1.UploadDate = DateTime.Now;
             string path = mainPath + model1.FilePath;
@@ -439,7 +453,6 @@ public partial class SysAdmin_News_AddOrEditArticle : System.Web.UI.Page
             this.content1.Value = ContentInfo+url;
             //---------
             this.txtFileName.Text = "";
-            this.txtDescription.Text = "";
         }
     }
 
@@ -454,5 +467,9 @@ public partial class SysAdmin_News_AddOrEditArticle : System.Web.UI.Page
         {
             this.bb.Visible = false;
         }
+    }
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ArticleList.aspx");
     }
 }

@@ -203,8 +203,10 @@ body{
 /*新闻类表*/
 .newslist_index{
 	width:315px;
+	height:465px;
 	float: left;
 	margin-left: 14px;
+	
 
 }
 .link a:first-child,.newslist div:first-child{
@@ -281,7 +283,7 @@ body{
 }
 
 .list p{
-	height: 30px;
+	line-height: 30px;
 	padding-left: 14px;
 	padding-bottom: 5px;
 
@@ -359,4 +361,18 @@ body{
 
 
 
+}
+.newsbg p{
+	line-height: 25px;
+	height: 50px;
+	overflow: hidden;
+	color: #878787;
+
+}
+.newsbg b{
+	position: absolute;
+	right:18px;
+	top:115px;
+	font-weight: normal;
+	/*color:#015293; */
 }

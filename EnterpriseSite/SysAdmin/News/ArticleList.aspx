@@ -24,11 +24,7 @@
      <table cellSpacing="0" cellPadding="0" width="800" border="0" align="center">
 				<tr><td height="10px"></td></tr>
 				<tr id="trSearchTop" runat="server">
-										<td width="70%">添加日期：<asp:textbox id="txtStart" Columns="10" onFocus="this.blur();"
-												Runat="server"></asp:textbox>&nbsp;<img  onclick="meizz_calendar(document.getElementById('txtStart'))"
-                                                               style="cursor:pointer;" src="../images/calendar.gif" /> 到	<asp:textbox id="txtEnd" Columns="10" onFocus="this.blur();" 
-												Runat="server"></asp:textbox>&nbsp;<img  onclick="meizz_calendar(document.getElementById('txtEnd'))"
-                                                               style="cursor:pointer;" src="../images/calendar.gif" /></td>
+										<td width="70%"></td>
 									
 					</tr>
 					<tr id="trSearchButtom" runat="server"><td> 标题：<asp:TextBox ID="txtTitle" runat="server" ></asp:TextBox> 类型：<asp:DropDownList ID="ddlCategory" runat="server"></asp:DropDownList>&nbsp;审核：<asp:DropDownList ID="ddlApproved" runat="server">
